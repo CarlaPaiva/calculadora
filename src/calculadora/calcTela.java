@@ -1,17 +1,10 @@
 package calculadora;
 
-import java.awt.Component;
-import java.awt.Image;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.awt.image.ImageProducer;
-import java.util.ArrayList;
-import java.util.List;
 
 import javax.swing.*;
 
-import com.sun.imageio.plugins.common.ImageUtil;
-import com.sun.javafx.fxml.expression.Expression;
 
 public class calcTela extends JFrame implements ActionListener {
 	
@@ -89,7 +82,7 @@ public class calcTela extends JFrame implements ActionListener {
 			btnResultado = btnGenerico("btnResultado", "=", 60, 60, 150, 280);
 			add(btnResultado);
 			
-			btnSoma = btnGenerico("btnSoma", "-", 60, 60, 220, 280);
+			btnSoma = btnGenerico("btnSoma", "+", 60, 60, 220, 280);
 			add(btnSoma);
 			
 			btn0.addActionListener(this);
@@ -204,6 +197,7 @@ public class calcTela extends JFrame implements ActionListener {
 	}
 	
 	public String fazConta(String expressao) {
-        return null;
+        RealizaCalculos conta = new RealizaCalculos();
+        return conta.calcula(expressao);
     }
 }
