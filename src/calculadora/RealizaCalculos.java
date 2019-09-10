@@ -1,28 +1,29 @@
 package calculadora;
 
 import java.util.ArrayList;
-import java.util.Collection;
-import java.util.Iterator;
 import java.util.List;
-import java.util.ListIterator;
 
 public class RealizaCalculos {
 	
-	public String calcula(String exp) {
+	public String calcula(String exp) throws Exception {
 		List<Character> operadores = listarOperadores(exp);
 		List<Double> numeros = listarNumeros(exp);
 		return calculaValor(numeros, operadores);
 	}
 
-	private double realizaConta(double num1, double num2, char operador) {
+	private double realizaConta(double num1, double num2, char operador) throws Exception {
 		if (operador == '+')
 			return num1 + num2;
 		else if (operador == '-')
 			return num1 - num2;
 		else if (operador == '*')
 			return num1 * num2;
-		else if (operador == '/')
-			return (num1/num2);
+		else if (operador == '/') {
+			if (num2 != 0)
+				return (num1/num2);
+			else
+				throw new Exception();
+		}
 		return 0;
 	}
 	
@@ -62,7 +63,7 @@ public class RealizaCalculos {
 		return temp;
 	}
 	
-	private String calculaValor(List<Double> numeros, List<Character> operadores) {
+	private String calculaValor(List<Double> numeros, List<Character> operadores) throws Exception {
 		double total = 0;
 		int j = 0;
 		
@@ -74,7 +75,7 @@ public class RealizaCalculos {
 				j ++;
 			}
 			else {
-				double n2 = numeros.get(i + i).doubleValue();
+				double n2 = numeros.get(i + 1).doubleValue();
 				total = realizaConta(total, n2, operadores.get(j).charValue());
 				j++;
 			}

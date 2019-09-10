@@ -6,6 +6,7 @@ import java.awt.event.ActionListener;
 import javax.swing.*;
 
 
+@SuppressWarnings("serial")
 public class calcTela extends JFrame implements ActionListener {
 	
 	private JButton btnLimpar;
@@ -196,7 +197,7 @@ public class calcTela extends JFrame implements ActionListener {
 		txtExp.setText(expr);
 	}
 	
-	public String fazConta(String expressao) {
+	public String fazConta(String expressao) throws Exception {
         RealizaCalculos conta = new RealizaCalculos();
         return conta.calcula(expressao);
     }
