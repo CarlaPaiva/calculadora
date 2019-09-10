@@ -27,6 +27,6 @@ e, preferencialmente, a IDE Eclipse.
 
 Encontrou um erro? Tem uma ideia :bulb: ? Fique a vontade para contribuir! Abra uma issue ou crie uma pull request, sua contribuição será bem vinda!
 
-#Licensa
+# Licensa
 
 [MIT](http://github.com/CarlaPaiva/calculadora/blob/master/LICENSE)
