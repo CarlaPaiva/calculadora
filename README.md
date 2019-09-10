@@ -20,12 +20,13 @@ Simples calculadora feita em java.
 # Configuração para Desenvolvimento
 
 Para rodar o projeto você deve ter instalado em sua maquina
-o [JDK do Java](https://www.oracle.com/technetwork/pt/java/javase/downloads/jdk8-downloads-2133151.html), 
-e preferencialmente a IDE Eclipse.
+o [JDK do Java](https://www.oracle.com/technetwork/pt/java/javase/downloads/jdk8-downloads-2133151.html) 
+e, preferencialmente, a IDE Eclipse.
 
 # Como contribuir?
 
-Encontrou um erro? Tem uma ideia :bulb: ? Fique a vontade para contribuir! Abra um issue ou crie pull request, sua contribuição será bem vinda!
+Encontrou um erro? Tem uma ideia :bulb: ? Fique a vontade para contribuir! Abra uma issue ou crie uma pull request, sua contribuição será bem vinda!
 
 #Licensa
-MIT
+
+[MIT](http://github.com/CarlaPaiva/calculadora/blob/master/LICENSE)
