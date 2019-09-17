@@ -27,6 +27,9 @@ public class calcTela extends JFrame implements ActionListener {
 	private JButton btnResultado;
 	private JButton btnSoma;
 	private JTextField txtExp;
+	private JMenuItem padrao;
+	private JMenuItem cientifica;
+	private JMenuItem sair;
 	
 	public calcTela() {
 		super("Calculadora");
@@ -86,6 +89,23 @@ public class calcTela extends JFrame implements ActionListener {
 			btnSoma = btnGenerico("btnSoma", "+", 60, 60, 220, 280);
 			add(btnSoma);
 			
+			//Menu
+			JMenu menu = new JMenu("Menu");
+			menu.add(padrao = new JMenuItem("Padrão"));
+			menu.add(cientifica = new JMenuItem("Científica"));
+			menu.addSeparator();
+			menu.add(sair = new JMenuItem("Sair"));
+			JMenuBar bar = new JMenuBar();
+			bar.add(menu);
+			
+			padrao.addActionListener(this);
+			cientifica.addActionListener(this);
+			sair.addActionListener(this);
+			
+			setJMenuBar(bar);
+			
+			//Fim menu
+			
 			btn0.addActionListener(this);
 			btn1.addActionListener(this);
 			btn2.addActionListener(this);
@@ -108,7 +128,7 @@ public class calcTela extends JFrame implements ActionListener {
 			setLayout(null);
 			setDefaultCloseOperation(EXIT_ON_CLOSE);
 			setLocationRelativeTo(null);
-			setSize(305, 400);
+			setSize(305, 410);
 			setVisible(true);
 		}
 		catch (Exception e) {
@@ -190,6 +210,15 @@ public class calcTela extends JFrame implements ActionListener {
 			else if (e.getSource() == btnSoma) {
 				expr = txtExp.getText() + "+";
 			}
+			else if (e.getSource() == padrao) {
+				MontaPadrao();
+			}
+			else if (e.getSource() == cientifica) {
+				MontaCientifica();
+			}
+			else if (e.getSource() == sair) {
+				dispose();
+			}
 		}
 		catch (Exception ex) {
 			expr = "ERROR";
@@ -201,4 +230,16 @@ public class calcTela extends JFrame implements ActionListener {
         RealizaCalculos conta = new RealizaCalculos();
         return conta.calcula(expressao);
     }
+	
+	private void MontaPadrao() {
+		setSize(305, 410);
+		btnLimpar.setSize(270, 25);
+		txtExp.setSize(270, 25);
+	}
+	
+	private void MontaCientifica() {
+		setSize(385, 410);
+		btnLimpar.setSize(350, 25);
+		txtExp.setSize(350, 25);
+	}
 }

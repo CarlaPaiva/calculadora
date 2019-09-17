@@ -24,6 +24,9 @@ public class RealizaCalculos {
 			else
 				throw new Exception();
 		}
+		else if (operador == '^') {
+			return Elevacao(num1, num2);
+		}
 		return 0;
 	}
 	
@@ -81,5 +84,12 @@ public class RealizaCalculos {
 			}
 		}
 		return String.valueOf(total);
+	}
+	
+	private double Elevacao(double n, double expoente) {
+		for (int i = 0; i< expoente; i++) {
+			n = n * n;
+		}
+		return n;
 	}
 }
