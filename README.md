@@ -11,7 +11,7 @@ Simples calculadora feita em java.
 
 :heavy_check_mark: Divisão
 
-:x: Potenciação
+:heavy_check_mark: Potenciação
 
 :x: Raiz Quadrada
 
