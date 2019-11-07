@@ -30,6 +30,8 @@ public class calcTela extends JFrame implements ActionListener {
 	private JMenuItem padrao;
 	private JMenuItem cientifica;
 	private JMenuItem sair;
+	private JButton btnAoQuadrado;
+	private JButton btnPotencia;
 	
 	public calcTela() {
 		super("Calculadora");
@@ -89,6 +91,12 @@ public class calcTela extends JFrame implements ActionListener {
 			btnSoma = btnGenerico("btnSoma", "+", 60, 60, 220, 280);
 			add(btnSoma);
 			
+			btnAoQuadrado = btnGenerico("btnAoQuadrado", "x²", 60, 60, 290, 70);
+			add(btnAoQuadrado);
+			
+			btnPotencia = btnGenerico("btnPotencia", "^", 60, 60, 290, 140);
+			add(btnPotencia);
+			
 			//Menu
 			JMenu menu = new JMenu("Menu");
 			menu.add(padrao = new JMenuItem("Padrão"));
@@ -123,12 +131,15 @@ public class calcTela extends JFrame implements ActionListener {
 			btnSoma.addActionListener(this);
 			btnPonto.addActionListener(this);
 			btnResultado.addActionListener(this);
+			btnAoQuadrado.addActionListener(this);
+			btnPotencia.addActionListener(this);
 			
 			//configs tela
 			setLayout(null);
 			setDefaultCloseOperation(EXIT_ON_CLOSE);
 			setLocationRelativeTo(null);
-			setSize(305, 410);
+			setResizable(false);
+			setSize(295, 410);
 			setVisible(true);
 		}
 		catch (Exception e) {
@@ -210,6 +221,12 @@ public class calcTela extends JFrame implements ActionListener {
 			else if (e.getSource() == btnSoma) {
 				expr = txtExp.getText() + "+";
 			}
+			else if (e.getSource() == btnAoQuadrado) {
+				expr = txtExp.getText() + "^2";
+			}
+			else if (e.getSource() == btnPotencia) {
+				expr = txtExp.getText() + "^";
+			}
 			else if (e.getSource() == padrao) {
 				MontaPadrao();
 			}
@@ -232,14 +249,14 @@ public class calcTela extends JFrame implements ActionListener {
     }
 	
 	private void MontaPadrao() {
-		setSize(305, 410);
+		setSize(295, 410);
 		btnLimpar.setSize(270, 25);
 		txtExp.setSize(270, 25);
 	}
 	
 	private void MontaCientifica() {
-		setSize(385, 410);
-		btnLimpar.setSize(350, 25);
-		txtExp.setSize(350, 25);
+		setSize(365, 410);
+		//btnLimpar.setSize(350, 25);
+		//txtExp.setSize(350, 25);
 	}
 }

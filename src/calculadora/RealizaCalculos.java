@@ -31,7 +31,7 @@ public class RealizaCalculos {
 	}
 	
 	private boolean eOperador(char operador) {
-		if (operador == '+' || operador == '-' || operador == '*' || operador == '/')
+		if (operador == '+' || operador == '-' || operador == '*' || operador == '/' || operador == '^')
 			return true;
 		return false;
 	}
@@ -87,8 +87,14 @@ public class RealizaCalculos {
 	}
 	
 	private double Elevacao(double n, double expoente) {
-		for (int i = 0; i< expoente; i++) {
-			n = n * n;
+		if (expoente == 0)
+			return 1;
+		
+		double base = n;
+		for (int i = 1; i <= expoente; i++) {
+			if (i != 1) {
+				n = (n * base);
+			}
 		}
 		return n;
 	}
